@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style type="text/css">
+    /* body{background-color: #3C3C3D;} */
+  </style>
+</head>
+<body>
+<div class="panel panel-default">
+  <center><h1>검색 결과</h1></center>
+  <table class="table">
+    <th>가게명</th>
+    <th>별점</th>
+    <th>리뷰수</th>
+    {% for s in crawl_result %}
+    <tr>
+        <td><a href = {{s.lin}}>{{s.store}}</a></td>
+        <td>{{s.score}}</td>
+        <td>{{s.review}}</td>
+        {% endfor %}
+    </tr>
+  </table>
+</div>
+</body>
+</html>
